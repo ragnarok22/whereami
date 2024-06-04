@@ -9,12 +9,8 @@ license=('GPL-3.0-or-later')
 groups=()
 depends=('curl' 'jq')
 optdepends=('xclip: Copy location to clipboard')
-install=
-changelog=
 source=("whereami")
-noextract=()
-sha256sums=()
-validpgpkeys=()
+sha256sums=('f1befd87b8b07f5d32a9800c2541521352c1ce49f2cd8b66672e186ebd4ecc76')
 
 prepare() {
 	cd "$pkgname-$pkgver"
