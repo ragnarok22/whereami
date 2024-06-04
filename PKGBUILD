@@ -11,8 +11,7 @@ depends=('curl' 'jq')
 optdepends=('xclip: Copy location to clipboard')
 install=
 changelog=
-source=("$pkgname-$pkgver.tar.gz"
-        "$pkgname-$pkgver.patch")
+source=("whereami")
 noextract=()
 sha256sums=()
 validpgpkeys=()
