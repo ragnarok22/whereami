@@ -22,6 +22,7 @@ prepare() {
 }
 
 check() {
+  echo "checking..."
 	# make -k check
 }
 

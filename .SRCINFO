@@ -1,7 +1,8 @@
-pkgbase = whereami
+pkgbase = whatismyip
 	pkgdesc = A simple utility to determine the location of a system using WiFi signals
 	pkgver = 0.1
 	pkgrel = 1
+	epoch = 1
 	url = https://github.com/ragnarok22/whereami
 	arch = any
 	license = GPL-3.0-or-later
@@ -9,5 +10,6 @@ pkgbase = whereami
 	depends = jq
 	optdepends = xclip: Copy location to clipboard
 	source = whereami
+	sha256sums = f1befd87b8b07f5d32a9800c2541521352c1ce49f2cd8b66672e186ebd4ecc76
 
-pkgname = whereami
+pkgname = whatismyip
