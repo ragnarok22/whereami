@@ -1,0 +1,50 @@
+#!/bin/bash
+
+JSON_INFO=""
+
+fetch_json_info() {
+  JSON_INFO=$(curl -s http://ipconfig.io/json)
+}
+
+get_my_ip() {
+  echo $JSON_INFO | jq -r '.ip'
+}
+
+get_my_country() {
+  echo $JSON_INFO | jq -r '.country'
+}
+
+copy_to_clipboard() {
+  if command -v xclip &> /dev/null; then
+    echo -n $1 | xclip -selection clipboard
+  elif command -v pbcopy &> /dev/null; then
+    echo -n $1 | pbcopy
+  else
+    echo "No clipboard utility found"
+  fi
+}
+
+help() {
+  echo "Usage: whereami [option]"
+  echo "Options:"
+  echo "  default: Get the IP"
+  echo "  --country: Get the country of the IP"
+  echo "  --copy: Copy the info to the clipboard"
+}
+
+fetch_json_info
+
+if [ "$1" == "--country" ]; then
+  result=$(get_my_country)
+elif [ "$1" == "--help" ]; then
+  help
+  exit 0
+else
+  result=$(get_my_ip)
+fi
+
+echo $result
+
+if [ "$2" == "--copy" ]; then
+  copy_to_clipboard $result
+fi
