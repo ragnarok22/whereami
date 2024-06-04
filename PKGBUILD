@@ -13,7 +13,6 @@ source=("whereami")
 sha256sums=('f1befd87b8b07f5d32a9800c2541521352c1ce49f2cd8b66672e186ebd4ecc76')
 
 prepare() {
-	cd "$pkgname-$pkgver"
   echo "Checking dependencies..."
   if ! command -v curl &> /dev/null; then
     echo "Error: 'curl' is not installed. Please install it before proceeding."
@@ -22,12 +21,10 @@ prepare() {
 }
 
 check() {
-	cd "$pkgname-$pkgver"
 	# make -k check
 }
 
 package() {
-	cd "$pkgname-$pkgver"
 	make DESTDIR="$pkgdir/" install
   install -Dm755 whereami "$pkgdir/usr/bin/whereami"
 }
