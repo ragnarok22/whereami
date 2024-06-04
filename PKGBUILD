@@ -1,5 +1,5 @@
 # Maintainer: Reinier Hernández <me@reinierhernandez.com>
-pkgname=whereami
+pkgname=whatismyip
 pkgver=0.1
 pkgrel=1
 pkgdesc="A simple utility to determine the location of a system using WiFi signals"
@@ -26,5 +26,5 @@ check() {
 
 package() {
 	make DESTDIR="$pkgdir/" install
-  install -Dm755 whereami "$pkgdir/usr/bin/whereami"
+  install -Dm755 whereami "$pkgdir/usr/bin/whatismyip"
 }
