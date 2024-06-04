@@ -1,0 +1,14 @@
+pkgbase = whereami
+	pkgdesc = A simple utility to determine the location of a system using WiFi signals
+	pkgver = 0.1
+	pkgrel = 1
+	url = https://github.com/ragnarok22/whereami
+	arch = any
+	license = GPL-3.0-or-later
+	depends = curl
+	depends = jq
+	optdepends = xclip: Copy location to clipboard
+	source = whereami-0.1.tar.gz
+	source = whereami-0.1.patch
+
+pkgname = whereami
