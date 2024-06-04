@@ -2,6 +2,7 @@
 pkgname=whatismyip
 pkgver=0.1
 pkgrel=1
+epoch=1
 pkgdesc="A simple utility to determine the location of a system using WiFi signals"
 arch=('any')
 url=https://github.com/ragnarok22/whereami
