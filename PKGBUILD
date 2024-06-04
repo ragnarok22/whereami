@@ -18,7 +18,11 @@ validpgpkeys=()
 
 prepare() {
 	cd "$pkgname-$pkgver"
-	patch -p1 -i "$srcdir/$pkgname-$pkgver.patch"
+  echo "Checking dependencies..."
+  if ! command -v curl &> /dev/null; then
+    echo "Error: 'curl' is not installed. Please install it before proceeding."
+    exit 1
+  fi
 }
 
 check() {
